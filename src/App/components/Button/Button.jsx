@@ -5,7 +5,10 @@ import PropTypes from 'prop-types'
 const Button=(props)=> {
     console.log(props)
   return (
-    <button className={style.Button}  style={{
+    <button onClick= {(evt)=> {
+    props.onClick("@@@");
+    }}
+        className={style.Button}  style={{
         backgroundColor: props.bgColor, 
         ...props.style,    
     }}> {props.text}</button>
@@ -18,7 +21,9 @@ Button.propTypes = {
     style : PropTypes.shape({
         width : PropTypes.string, 
         padding : PropTypes.string, 
-    })
+    }),
+
+    onClick : PropTypes.func.isRequired,
 
 }
 
