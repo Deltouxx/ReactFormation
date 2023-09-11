@@ -10,3 +10,9 @@
     font-weight: 900;
     font-size: x-large;
 }
+
+.Button:hover{
+    box-shadow: 15px 15px 25px gray;
+    border: 1px solid gray;
+    color : grey;
+}

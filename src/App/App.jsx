@@ -10,7 +10,7 @@ import Button from './components/Button/Button.jsx';
 const App=(props) => {
 
 
-return <div className='App'>Michel c'est le bresil <hr/> <Button text='Benjamin' /> <hr/>
+return <div className='App'>Michel c'est le bresil <hr/> <Button text={"1000"} bgColor='tomato'/> <hr/>
 <Button text='Jenson' /> </div>
 
 };
