@@ -11,7 +11,7 @@ const App=(props) => {
 
 
 return <div className='App'>Michel c'est le bresil <hr/> <Button text='Benjamin' /> <hr/>
-<Button text='Janson' /> </div>
+<Button text='Jenson' /> </div>
 
 };
 export default App;
