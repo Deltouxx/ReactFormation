@@ -5,13 +5,25 @@ import PropTypes from 'prop-types'
 const Button=(props)=> {
     console.log(props)
   return (
-    <button className={style.Button}  style={{backgroundColor: props.bgColor}}> {props.text}</button>
+    <button className={style.Button}  style={{
+        backgroundColor: props.bgColor, 
+        ...props.style,    
+    }}> {props.text}</button>
   )
 };
 
 Button.propTypes = {
     text: PropTypes.string.isRequired,
-    bgColor : PropTypes.oneOf(['skyblue', 'tomato', 'transparent']).isRequired
+    bgColor : PropTypes.oneOf(['skyblue', 'tomato', 'transparent']).isRequired, 
+    style : PropTypes.shape({
+        width : PropTypes.string, 
+        padding : PropTypes.string, 
+    })
 
+}
+
+Button.defaultProps = {
+    text : "Toto c'est pas le brezzzzzil",
+    bgColor : "skyblue",
 }
 export default Button
