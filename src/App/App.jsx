@@ -14,7 +14,24 @@ import Button from "./components/Button/Button.jsx";
 /*npm run gen-ui Header*/
 const App = (props) => {
 const [current, setcurrent] = useState(DummyMeme);
-const [images, setimages] = useState([{id:0, url:'https://th.bing.com/th/id/R.7d34d07748581bb86355d59c1a100562?rik=OclN5Axox74KJA&riu=http%3a%2f%2ffreelargeimages.com%2fwp-content%2fuploads%2f2014%2f11%2fFunny_Memes_401491.jpg&ehk=hCJqFpXutxV%2fZgwMefJuquhSVSrG2pNJu0%2fw1%2bUkWsw%3d&risl=&pid=ImgRaw&r=0'}]);
+const [images, setimages] = useState([
+  {
+    id: 0,
+    titre : 'MICHELLLLLLLLLL C EST LE BRESIL, Y VA DE VILLE EN VILLE',
+    url: "https://risibank.fr/cache/medias/0/12/1285/128588/full.png",
+    w: 467,
+    h: 348,
+  },
+]);
+
+useEffect(() => {
+  fetch('http://localhost:7956/images').then((resp) =>
+  resp.json()).then((imgList) => setimages(imgList))
+  
+
+}, [])
+
+
   return (
 
     <div className="App">
