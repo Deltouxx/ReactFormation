@@ -36,11 +36,20 @@ const MemeForm = (props) => {
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
-          <option value="1">futurama1.jpg</option>
-          <option value="2">futurama2.png</option>
-          <option value="3">futurama3.png</option>
-          <option value="4">gwenadu.jpg</option>
+        <select
+          name="image"
+          id="image"
+          value={props.meme.imageId}
+          onChange={(evt) => {
+            props.onMemeChange({
+              ...props.meme,
+              imageId: Number(evt.target.value),
+            });
+          }}
+        >
+          <option value="-1">Pas d'image</option>
+          {props.images.map((e, i) => (<option value={e.id}>{e.titre}</option>
+          ))}
         </select>
         <hr />
         <label htmlFor="text">
@@ -82,6 +91,7 @@ const MemeForm = (props) => {
           id="fontSize"
           type="number"
           min="0"
+          value={props.meme.fontSize}
           onChange={(evt) => {
             props.onMemeChange({
               ...props.meme,
@@ -102,6 +112,7 @@ const MemeForm = (props) => {
           min="100"
           step="100"
           max="900"
+          value={props.meme.fontWeight}
           onChange={(evt) => {
             props.onMemeChange({ ...props.meme, fontWeight: evt.target.value });
           }}
@@ -123,7 +134,7 @@ const MemeForm = (props) => {
         <input name="italic" id="italic" type="checkbox"  value={props.meme.italic}
           onChange={(evt) => {
             props.onMemeChange({ ...props.meme, italic: evt.target.checked });
-            //console.log(evt.target.value)
+
           }} />
         <hr />
         <br />

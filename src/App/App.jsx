@@ -9,7 +9,7 @@ import MemeForm from "./components/MemeForm/MemeForm.jsx";
 import MemeViewer from "./components/ui/MemeViewer/MemeViewer";
 import { DummyMeme } from "./interfaces/common";
 import Button from "./components/Button/Button.jsx";
-
+import { store } from "./store/store.js";
 
 /*npm run gen-ui Header*/
 const App = (props) => {
@@ -42,8 +42,9 @@ useEffect(() => {
           
           <MemeViewer meme={current} image={images.find(img=>img.id===current.imageId)} basePath=""></MemeViewer>
           <MemeForm meme={current}  onMemeChange={(newMeme)=> {
+           
             setcurrent(newMeme);
-          }}></MemeForm>
+          }}  images={images}/>
 
         </FlexW1G>
         <Footer></Footer>
