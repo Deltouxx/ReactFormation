@@ -1,1 +1,10 @@
-.Footer {}
+.Footer {
+
+    text-align: center;
+    color: blueviolet;
+}
+
+.orchestre{
+    color: chartreuse;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 
 const Header = () => (
   <div className={styles.Header} data-testid="Header">
-    Header Component
+    <span className={styles.meme} >Bienvenue chez THEDUKE COMPANY</span>
   </div>
 );
 
