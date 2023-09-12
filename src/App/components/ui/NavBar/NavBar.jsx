@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NavBar.module.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import "/node_modules/bootstrap/dist/css/bootstrap.css"
+import "/node_modules/jquery/dist/jquery.js"
+import "/node_modules/bootstrap/dist/js/bootstrap.js"
 
 const NavBar = () => ( 
   <div className={styles.NavBar} data-testid="NavBar">
