@@ -18,33 +18,33 @@ const Button=(props)=> {
   return (
     <button onClick={(evt)=>{
         setIsClicked(true)
-    props.onClick();
-
-    
-
+      if(undefined !== props.onClick) props.onClick();
     }}
-        className={isClickled?style.Button+' '+style.clicked: style.Button}  style={{
-        backgroundColor: props.bgColor, 
+        className={isClickled?style.Button+' '+style.clicked: style.Button}
+        style={{   backgroundColor: props.bgColor, 
         ...props.style,    
-    }}> {props.children}</button>
+    }}
+    type={props.type}
+    > {props.children}</button>
   )
 };
 
 Button.propTypes = {
     children : PropTypes.any.isRequired,
     text: PropTypes.string.isRequired,
-    bgColor : PropTypes.oneOf(['skyblue', 'tomato', 'transparent']).isRequired, 
+    bgColor : PropTypes.oneOf(['skyblue', 'tomato', 'transparent', 'green']).isRequired, 
     style : PropTypes.shape({
         width : PropTypes.string, 
         padding : PropTypes.string, 
     }),
-
-    onClick : PropTypes.func.isRequired,
+    type: PropTypes.oneOf(["button", "submit", "reset", undefined]),
+    onClick : PropTypes.func,
 
 }
 
 Button.defaultProps = {
     text : "Toto c'est pas le brezzzzzil",
-    bgColor : "skyblue",
+    bgColor : "green",
+    type : "button"
 }
 export default Button
