@@ -11,6 +11,23 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true
+    }, 
+    "function": {
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true, 
+      "customTemplates" : {
+        "component" : "grc_templates/functionWithState/TempalteName.jsx"
+      }
+    }, 
+    "ui": {
+      "path": "src/App/components/ui",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true
     }
   }
 }

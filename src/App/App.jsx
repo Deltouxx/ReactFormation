@@ -54,7 +54,10 @@ const App = (props) => {
           setState({ ...state, counter: state.counter - 1 });
           console.log("ON M A CALLLLLL", state);
         }}
-      >MOU,INSSS</Button>
+      >MOU,INSSS<img
+      src="https://pmcdn.priceminister.com/photo/adhesif-sticker-drapeau-breton-bretagne-29x19-cm-decoration-862748947_L.jpg"
+      style={{ height: "320px", width: "330px" }}
+    /></Button>
     </div>
   );
 };
