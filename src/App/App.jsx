@@ -7,7 +7,7 @@ import FlexW1G from "./components/layout/FlexW1G/FlexW1G.jsx";
 import Footer from "./components/ui/Footer/Footer.jsx";
 import MemeForm from "./components/MemeForm/MemeForm.jsx";
 
-
+/*npm run gen-ui Header*/
 const App = (props) => {
 
   return (
