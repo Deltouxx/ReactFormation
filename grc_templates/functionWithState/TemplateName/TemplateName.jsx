@@ -10,11 +10,11 @@ const TemplateName = (props) => {
  console.log('montage de Template')
 
   return () => {
-    second
+    
   }
 }, [])
 
-const [state, setState] = useState(second)
+const [state, setState] = useState(templateNameInitialState)
 
 
   return(
