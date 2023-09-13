@@ -39,16 +39,11 @@ const ressources = createSlice({
         state.memes.push(...action.payload.memes);
       }
     );
-    builder.addCase(
-      "current/save/fulfilled",
-      (s, a) => {
-        const position=s.memes.findIndex(m=>m.id===a.payload.id)
-        if(position===-1)s.memes.push(a.payload);
-        else s.memes[position]=a.payload;
-      }
-    );
-
-
+    builder.addCase("current/save/fulfilled", (s, a) => {
+      const position=s.memes.findIndex(m=>m.id===a.payload.id)
+      if(position===-1)s.memes.push(a.payload);
+      else s.memes[position]=a.payload;
+    });
   },
 });
 
@@ -63,10 +58,6 @@ export const fetchAllRessources = createAsyncThunk(
     return { images: await a[0].json(), memes: await a[1].json() };
   }
 );
-
-
-
-
 
 export const { addImage, loadImagesFromArg } = ressources.actions;
 

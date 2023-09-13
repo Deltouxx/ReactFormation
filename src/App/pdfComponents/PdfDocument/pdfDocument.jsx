@@ -5,7 +5,8 @@ export default function pdfDocument(props) {
     <Document>
       <Page>
         <View>
-            <Text style={{color:"red",fontSize:"18pt", textAlign:'center'}}>{props.meme.titre}</Text>
+            <Text style={{color:"blue",fontSize:"18pt", textAlign:'center'}}>{props.meme.titre}
+            </Text>
         </View>
       </Page>
     </Document>

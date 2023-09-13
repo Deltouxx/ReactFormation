@@ -4,7 +4,7 @@ import styles from "./MemeForm.module.css";
 import Button from "../Button/Button";
 import { store } from "../../store/store";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { saveCurrent } from "../../store/current";
+import { change, saveCurrent } from "../../store/current";
 const memeFormInitialState = {};
 
 const MemeForm = (props) => {
@@ -16,7 +16,7 @@ const MemeForm = (props) => {
         }}
         onSubmit={(evt) => {
           evt.preventDefault();
-          props.onMemeSubmit(props.meme)
+          props.onMemeSubmit(props.meme);
         }}
       >
         <label htmlFor="titre">
@@ -159,6 +159,7 @@ const MemeForm = (props) => {
           name="underline"
           id="underline"
           type="checkbox"
+          type="checkbox"
           value={props.meme.underline}
           onChange={(evt) => {
             props.onMemeChange({
@@ -274,19 +275,13 @@ export const MemeFormStoredData = (props) => {
       images={images}
       meme={c}
       onMemeChange={(newMeme) => {
-        dispatch({ type: "current/change", payload: newMeme });
-        //dispatch(changeCurrent(newMeme));
-      
+        //dispatch({ type: "current/change", payload: newMeme });
+        dispatch(change(newMeme));
       }}
-    
-      onMemeSubmit={(newMeme) => 
-      {
-        dispatch(saveCurrent(newMeme ));
-      }
-    }
-    
-    
-    
+      onMemeSubmit={(newMeme) => {
+        //dispatch({ type: "current/change", payload: newMeme });
+        dispatch(saveCurrent(newMeme));
+      }}
     ></MemeForm>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { DummyMeme, IImage, IMeme } from "../../../interfaces/common";
 import style from "./MemeViewer.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 export interface IMemeViewerProps {
   meme: IMeme;
   image: IImage | undefined;
