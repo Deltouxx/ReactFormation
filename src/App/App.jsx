@@ -13,6 +13,7 @@ import { change, clear } from "./store/current";
 import { useSelector } from "react-redux";
 import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
 import PdfDocument from "./pdfComponents/PdfDocument/pdfDocument";
+#si pb 06.64.27.63.60  #alexandre desorbais
 const App = () => {
   return (
     <div className="App">
