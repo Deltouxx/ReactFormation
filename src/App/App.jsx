@@ -13,12 +13,12 @@ const App = () => {
       <FlexH3G>
         <Header></Header>
         <Navbar></Navbar>
-        {/* <FlexW1G>
+        <FlexW1G>
           <MemeViewerStoredCurrent 
             basePath=""/>
           <MemeFormStoredData/>
-        </FlexW1G> */}
-        
+        </FlexW1G> 
+
         <MemeThumbnailStoredDatas/>
         <Footer></Footer>
       </FlexH3G>
