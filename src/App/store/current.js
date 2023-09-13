@@ -1,5 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { DummyMeme } from '../interfaces/common';
+import { REST_ADR } from '../constantes/constantes';
 
 const initialState = DummyMeme;
 
@@ -15,7 +16,26 @@ const current = createSlice({
         Object.assign(state,DummyMeme);
     }
   }
+   
 });
+
+
+
+export const saveCurrent = createAsyncThunk("current/save", async (current) => {
+  const p = await fetch(
+    `${REST_ADR}/memes${undefined !== current.id ? "/" + current.id : ""}`,
+    {
+      method: undefined !== current.id ? "PUT" : "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(current),
+    }
+  );
+  return await p.json();
+});
+
+
 
 export const {clear,change} = current.actions
 
