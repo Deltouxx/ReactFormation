@@ -1,10 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import ressourcesReducer, { addImage } from "./ressources.js";
+import ressourcesReducer, { addImage, fetchAllRessources } from "./ressources.js";
 import currentReducer from './current.js'
 export const store = configureStore({
   reducer: combineReducers({ressources: ressourcesReducer,current:currentReducer}),
   devTools: true,
 });
+
+store.dispatch(fetchAllRessources())
+/*
 const daction = addImage({ id: -1, url: "hello" });
 console.log(daction);
 
@@ -15,3 +18,4 @@ store.subscribe(() => {
 
 store.dispatch(daction);
 store.dispatch({type:'ressources/addImage',payload:{hello:"de lu"}});
+*/
