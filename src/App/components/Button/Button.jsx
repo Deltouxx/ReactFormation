@@ -1,50 +1,47 @@
-import React, { useEffect, useState } from 'react'
-import style from './Button.module.css'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState } from "react";
+import style from "./Button.module.css";
+import PropTypes from "prop-types";
 
-const Button=(props)=> {
-
-    const [isClickled, setIsClicked] = useState(false);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setIsClicked(false);
-        },1000);
-    }, [isClickled]);
-    
-
-    console.log(props)
+const Button = (props) => {
+  const [isClicked, setIsClicked] = useState(false);
+  //console.log(props);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 180);
+  }, [isClicked]);
 
   return (
-    <button onClick={(evt)=>{
-        setIsClicked(true)
-      if(undefined !== props.onClick) props.onClick();
-    }}
-        className={isClickled?style.Button+' '+style.clicked: style.Button}
-        style={{   backgroundColor: props.bgColor, 
-        ...props.style,    
-    }}
-    type={props.type}
-    > {props.children}</button>
-  )
+    <button
+      onClick={(evt) => {
+        setIsClicked(true);
+        if(undefined!==props.onClick)props.onClick();
+      }}
+      className={isClicked ? style.Button + " " + style.clicked : style.Button}
+      style={{
+        backgroundColor: props.bgColor,
+        ...props.style,
+      }}
+      type={props.type}
+    >
+      {props.children}
+    </button>
+  );
 };
 
 Button.propTypes = {
-    children : PropTypes.any.isRequired,
-    text: PropTypes.string.isRequired,
-    bgColor : PropTypes.oneOf(['skyblue', 'tomato', 'transparent', 'green']).isRequired, 
-    style : PropTypes.shape({
-        width : PropTypes.string, 
-        padding : PropTypes.string, 
-    }),
-    type: PropTypes.oneOf(["button", "submit", "reset", undefined]),
-    onClick : PropTypes.func,
-
-}
-
+  children: PropTypes.any.isRequired,
+  bgColor: PropTypes.oneOf(["skyblue", "tomato", "transparent"]),
+  onClick: PropTypes.func,
+  style: PropTypes.shape({
+    width: PropTypes.string,
+    padding: PropTypes.string,
+  }),
+  type: PropTypes.oneOf(["button", "submit", "reset", undefined]),
+};
 Button.defaultProps = {
-    text : "Toto c'est pas le brezzzzzil",
-    bgColor : "green",
-    type : "button"
-}
-export default Button
+  bgColor: "skyblue",
+  type: "button",
+};
+
+export default Button;

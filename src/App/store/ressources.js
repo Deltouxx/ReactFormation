@@ -46,6 +46,3 @@ export const fetchAllRessources=createAsyncThunk('ressources/fetchAllRessources'
 export const { addImage, loadImagesFromArg } = ressources.actions;
 
 export default ressources.reducer;
-
-
-

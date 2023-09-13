@@ -7,10 +7,10 @@ const initialState = DummyMeme;
 //   name: 'current',
 //   initialState,
 //   reducers: {
-//     changeCurrent(state,action){
+//     change(state,action){
 
 //     },
-//     clearCurrent(state,action){
+//     clear(state,action){
 
 //     }
 //   }

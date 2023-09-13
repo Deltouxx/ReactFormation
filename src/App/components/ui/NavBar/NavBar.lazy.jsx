@@ -1,11 +1,11 @@
 import React, { lazy, Suspense } from 'react';
 
-const LazyNavBar = lazy(() => import('./NavBar'));
+const LazyNavbar = lazy(() => import('./Navbar'));
 
-const NavBar = props => (
+const Navbar = props => (
   <Suspense fallback={null}>
-    <LazyNavBar {...props} />
+    <LazyNavbar {...props} />
   </Suspense>
 );
 
-export default NavBar;
+export default Navbar;

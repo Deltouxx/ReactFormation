@@ -232,9 +232,6 @@ const MemeForm = (props) => {
   );
 };
 
-MemeForm.propTypes = {};
-
-MemeForm.defaultProps = {};
 
 export default MemeForm;
 /*
@@ -274,9 +271,10 @@ export const MemeFormStoredData = (props) => {
       {...props}
       images={images}
       onMemeChange={(newMeme) => {
-        /* dispatch ({ type : "current/change", payload : newMeme }) */
-        dispatch(changeCurrent(newMeme));
+        dispatch({ type: "current/change", payload: newMeme });
+        //dispatch(changeCurrent(newMeme));
       }}
     ></MemeForm>
   );
 };
+

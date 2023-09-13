@@ -4,7 +4,7 @@ import styles from './Footer.module.css';
 
 const Footer = () => (
   <div className={styles.Footer} data-testid="Footer">
-     <span className={styles.orchestre} >Fait par Michel et son Orchestre</span> 
+   Copyright DESORBAIX &copy; 2023
   </div>
 );
 

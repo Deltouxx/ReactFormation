@@ -1,11 +1,11 @@
 /* eslint-disable */
-import NavBar from './NavBar';
+import Navbar from './Navbar';
 
 export default {
-  title: "NavBar",
+  title: "Navbar",
 };
 
-export const Default = () => <NavBar />;
+export const Default = () => <Navbar />;
 
 Default.story = {
   name: 'default',

@@ -14,7 +14,7 @@ FlexW1G.propTypes = {
   children: PropTypes.any.isRequired,
 };
 FlexW1G.defaultProps = {
-  children: <div> FlexW1G layout empty component </div>,
+  children: <div>FlexW1G layout empty component</div>,
 };
 
 export default FlexW1G;

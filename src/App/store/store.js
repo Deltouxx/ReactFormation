@@ -5,10 +5,8 @@ export const store = configureStore({
   reducer: combineReducers({ressources: ressourcesReducer,current:currentReducer}),
   devTools: true,
 });
-
-store.dispatch(fetchAllRessources())
-/*
-const daction = addImage({ id: -1, url: "hello" });
+store.dispatch(fetchAllRessources());
+/*const daction = addImage({ id: -1, url: "hello" });
 console.log(daction);
 
 store.subscribe(() => {
