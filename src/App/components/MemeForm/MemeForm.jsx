@@ -157,7 +157,6 @@ const MemeForm = (props) => {
           name="underline"
           id="underline"
           type="checkbox"
-          type="checkbox"
           value={props.meme.underline}
           onChange={(evt) => {
             props.onMemeChange({
