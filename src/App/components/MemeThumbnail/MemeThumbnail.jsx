@@ -38,7 +38,7 @@ export default MemeThumbnail;
 export const MemeThumbnailStoredDatas = (props) => {
   const dispatch = useDispatch();
   const images = useSelector((s) => s.ressources.images);
-  const memes = useSelector((s) => s.ressources.memes);
+  const memes = useSelector((s) => s.ressources.memes); /*useState sur l'état du magasin*/
   return (
     <MemeThumbnail
       {...props}
