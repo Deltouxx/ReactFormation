@@ -231,6 +231,21 @@
       "frameSizeX": 0,
       "frameSizeY": 0,
       "id": 12
+    },
+    {
+      "titre": "",
+      "text": "SALUT C EST CHICO",
+      "x": -17,
+      "y": 17,
+      "fontWeight": "900",
+      "fontSize": 57,
+      "underline": true,
+      "italic": true,
+      "imageId": 0,
+      "color": "#d83131",
+      "frameSizeX": 33,
+      "frameSizeY": 0,
+      "id": 13
     }
   ]
 }
