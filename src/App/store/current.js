@@ -22,7 +22,7 @@ const initialState = DummyMeme;
 const currentReducer =(state=initialState,action)=>{
     switch(action.type){
         case 'current/change':return {...state,...action.payload};
-        case 'current/clear':return {DummyMeme};
+        case 'current/clear':return {...DummyMeme};
         default : return state;
     }
 }
