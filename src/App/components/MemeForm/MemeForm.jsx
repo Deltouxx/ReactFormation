@@ -274,7 +274,8 @@ export const MemeFormStoredData = (props) => {
       {...props}
       images={images}
       onMemeChange={(newMeme) => {
-        dispatch({ type: "current/change", payload: newMeme });
+        /* dispatch ({ type : "current/change", payload : newMeme }) */
+        dispatch(changeCurrent(newMeme));
       }}
     ></MemeForm>
   );

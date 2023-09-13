@@ -5,7 +5,7 @@ import Header from "./components/ui/Header/Header.jsx";
 import NavBar from "./components/ui/NavBar/NavBar.jsx";
 import FlexW1G from "./components/layout/FlexW1G/FlexW1G.jsx";
 import Footer from "./components/ui/Footer/Footer.jsx";
-import MemeForm from "./components/MemeForm/MemeForm.jsx";
+import MemeForm, { MemeFormStoredData } from "./components/MemeForm/MemeForm.jsx";
 import MemeViewer from "./components/ui/MemeViewer/MemeViewer";
 import { DummyMeme } from "./interfaces/common";
 import Button from "./components/Button/Button.jsx";
@@ -41,7 +41,7 @@ useEffect(() => {
         <FlexW1G>
           
           <MemeViewer meme={current} image={images.find(img=>img.id===current.imageId)} basePath=""></MemeViewer>
-          <MemeForm meme={current}  onMemeChange={(newMeme)=> {
+          <MemeFormStoredData meme={current}  onMemeChange={(newMeme)=> {
            
             setcurrent(newMeme);
           }}  images={images}/>
