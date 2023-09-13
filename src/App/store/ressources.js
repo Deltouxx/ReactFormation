@@ -29,23 +29,30 @@ const ressources = createSlice({
       state.images.push(...action.payload);
     },
   },
-  extraReducers(builder){
-    builder.addCase('ressources/fetchAllRessources/fulfilled',(state,action)=>{
-     
+  extraReducers(builder) {
+    builder.addCase(
+      "ressources/fetchAllRessources/fulfilled",
+      (state, action) => {
         state.images.splice(0);
         state.images.push(...action.payload.images);
-        state.images.splice(0);
-        state.images.push(...action.payload.memes);
-    })
-  }
+        state.memes.splice(0);
+        state.memes.push(...action.payload.memes);
+      }
+    );
+  },
 });
 
-export const fetchAllRessources=createAsyncThunk('ressources/fetchAllRessources',async ()=>{
-  const a=await Promise.all([ fetch(REST_ADR+'/images'), fetch(REST_ADR+'/memes')]);
-  const images=await a[0].json();
-  const memes=await a[1].json();
-  return {images:images,memes:memes};
-})
+export const fetchAllRessources = createAsyncThunk(
+  "ressources/fetchAllRessources",
+  async () => {
+    const a = await Promise.all([
+      fetch(REST_ADR + "/images"),
+      fetch(REST_ADR + "/memes"),
+    ]);
+    
+    return { images: await a[0].json(), memes: await a[1].json() };
+  }
+);
 
 export const { addImage, loadImagesFromArg } = ressources.actions;
 
