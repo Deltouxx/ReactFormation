@@ -32,8 +32,8 @@ const App = () => {
         <FlexW1G>
           <MemeViewer
             meme={current}
-            image={images.find((img) => img.id === current.imageId)}
-            basePath=""
+            /*image={images.find((img) => img.id === current.imageId)}
+            basePath=""*/
           ></MemeViewer>
           <MemeFormStoredData
             //images={images}

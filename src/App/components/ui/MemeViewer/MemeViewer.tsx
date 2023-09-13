@@ -1,6 +1,7 @@
 import React from 'react'
 import { DummyMeme, IImage, IMeme } from '../../../interfaces/common'
 import style from './MemeViewer.module.css'
+import { useDispatch, useSelector } from 'react-redux'
 
 export interface IMemeViewerProps {
   meme: IMeme
@@ -45,5 +46,16 @@ const MemeViewer: React.FC<IMemeViewerProps> = (props) => {
     </svg>
   )
 }
-MemeViewer.defaultProps = { basePath: '/img/', meme:DummyMeme }
-export default MemeViewer
+MemeViewer.defaultProps = { basePath: "/img/", meme: DummyMeme };
+export default MemeViewer;
+export const MemeViewerStoredCurrent = (props: any) => {
+  const imgs = useSelector((s: any) => s.ressources.images);
+  const c = useSelector((s: any) => s.current);
+  return (
+    <MemeViewer
+      {...props}
+      image={imgs.find((im) => im.id === c.imageId)}
+      meme={c}
+    />
+  );
+};
